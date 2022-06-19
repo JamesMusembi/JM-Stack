@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from stackusers import views as user_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('stackbase.urls'))
+    path('', include('stackbase.urls')),
+    
+    # Authentication system
+    path('regester/',user_view.register, name='register'),
 ]
