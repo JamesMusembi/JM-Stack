@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from stackusers import views as user_view
+from django.contrib.auth import views as auth_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('stackbase.urls')),
     
     # Authentication system
-    path('register/',user_view.register, name='register'),
+    path('register/', user_view.register, name='register'),
+    path('login/', auth_view.LoginView.as_view(template_name='stackusers/login.html'), name='login'),
 ]
