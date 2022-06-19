@@ -20,3 +20,18 @@ class Question(models.Model):
     
     def total_likes(self):
         return self.likes.count()
+
+class Comment(models.Model):
+    question = models.ForeignKey(Question, related_name="comment", on_delete=models.CASCADE)
+    name = models.CharField(max_length=1000)
+    content = RichTextField()
+    date_created = models.DateTimeField(default=timezone.now)   
+
+    def __str__(self):
+        return '%s - %s' % (self.question.title, self.question.user)
+
+    def get_success_url(self):
+        return reverse('stackbase:question-detail', kwargs={'pk':self.pk})
+    
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
