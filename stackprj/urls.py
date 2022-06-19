@@ -22,5 +22,5 @@ urlpatterns = [
     path('', include('stackbase.urls')),
     
     # Authentication system
-    path('regester/',user_view.register, name='register'),
+    path('register/',user_view.register, name='register'),
 ]
