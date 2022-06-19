@@ -3,3 +3,7 @@ from .import views
 
 
 app_name = 'stackbase'
+
+urlpatterns = [
+    path('', views.home, name="home")
+]
