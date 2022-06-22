@@ -49,7 +49,7 @@ Run test using the following command
 
 
 ```
- ./manage.py test hood
+ ./manage.py test stackover
 ```
 
 ## Authors
