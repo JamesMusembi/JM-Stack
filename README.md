@@ -52,6 +52,6 @@ Run test using the following command
  ./manage.py test stackover
 ```
 
-## Authors
+## Author
 
 * **James Musembi** - [JamesMusembi](https://github.com/JamesMusembi)
